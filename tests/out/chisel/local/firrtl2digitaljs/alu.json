@@ -1,0 +1,524 @@
+{
+    "devices": {
+        "_GEN_2": {
+            "type": "Mux",
+            "label": "_GEN_2",
+            "bits": {
+                "in": 32,
+                "sel": 1
+            }
+        },
+        "_T_9": {
+            "type": "Division",
+            "label": "_T_9",
+            "bits": {
+                "in1": 16,
+                "in2": 16,
+                "out": 16
+            },
+            "signed": {
+                "in1": false,
+                "in2": false
+            }
+        },
+        "io_op": {
+            "type": "NumEntry",
+            "label": "io_op",
+            "bits": 2,
+            "numbase": "hex"
+        },
+        "_T": {
+            "type": "Eq",
+            "label": "_T",
+            "bits": {
+                "in1": 2,
+                "in2": 2
+            },
+            "signed": {
+                "in1": false,
+                "in2": false
+            }
+        },
+        "_T_3": {
+            "type": "Eq",
+            "label": "_T_3",
+            "bits": {
+                "in1": 2,
+                "in2": 2
+            },
+            "signed": {
+                "in1": false,
+                "in2": false
+            }
+        },
+        "_T_4": {
+            "type": "Addition",
+            "label": "_T_4",
+            "bits": {
+                "in1": 16,
+                "in2": 16,
+                "out": 17
+            },
+            "signed": {
+                "in1": false,
+                "in2": false
+            }
+        },
+        "__INTERMEDIATE__c": {
+            "type": "Constant",
+            "label": "__INTERMEDIATE__c",
+            "constant": "10"
+        },
+        "_T_6": {
+            "type": "Eq",
+            "label": "_T_6",
+            "bits": {
+                "in1": 2,
+                "in2": 2
+            },
+            "signed": {
+                "in1": false,
+                "in2": false
+            }
+        },
+        "_GEN_3": {
+            "type": "Mux",
+            "label": "_GEN_3",
+            "bits": {
+                "in": 32,
+                "sel": 1
+            }
+        },
+        "_T_2": {
+            "type": "BusSlice",
+            "label": "_T_2",
+            "slice": {
+                "first": 0,
+                "count": 16,
+                "total": 17
+            }
+        },
+        "_T_7": {
+            "type": "Multiplication",
+            "label": "_T_7",
+            "bits": {
+                "in1": 16,
+                "in2": 16,
+                "out": 32
+            },
+            "signed": {
+                "in1": false,
+                "in2": false
+            }
+        },
+        "clock": {
+            "type": "Clock",
+            "label": "clock"
+        },
+        "__INTERMEDIATE__2": {
+            "type": "Constant",
+            "label": "__INTERMEDIATE__2",
+            "constant": "00"
+        },
+        "_T_5": {
+            "type": "BusSlice",
+            "label": "_T_5",
+            "slice": {
+                "first": 0,
+                "count": 16,
+                "total": 17
+            }
+        },
+        "reset": {
+            "type": "Button",
+            "label": "reset"
+        },
+        "_GEN_1": {
+            "type": "Mux",
+            "label": "_GEN_1",
+            "bits": {
+                "in": 32,
+                "sel": 1
+            }
+        },
+        "io_result": {
+            "type": "NumDisplay",
+            "label": "io_result",
+            "bits": 32,
+            "numbase": "hex"
+        },
+        "io_b": {
+            "type": "NumEntry",
+            "label": "io_b",
+            "bits": 16,
+            "numbase": "hex"
+        },
+        "_T_1": {
+            "type": "Subtraction",
+            "label": "_T_1",
+            "bits": {
+                "in1": 16,
+                "in2": 16,
+                "out": 17
+            },
+            "signed": {
+                "in1": false,
+                "in2": false
+            }
+        },
+        "_GEN_0": {
+            "type": "Mux",
+            "label": "_GEN_0",
+            "bits": {
+                "in": 32,
+                "sel": 1
+            }
+        },
+        "__INTERMEDIATE__10": {
+            "type": "Constant",
+            "label": "__INTERMEDIATE__10",
+            "constant": "11"
+        },
+        "_T_8": {
+            "type": "Eq",
+            "label": "_T_8",
+            "bits": {
+                "in1": 2,
+                "in2": 2
+            },
+            "signed": {
+                "in1": false,
+                "in2": false
+            }
+        },
+        "io_a": {
+            "type": "NumEntry",
+            "label": "io_a",
+            "bits": 16,
+            "numbase": "hex"
+        },
+        "__INTERMEDIATE__7": {
+            "type": "Constant",
+            "label": "__INTERMEDIATE__7",
+            "constant": "01"
+        },
+        "__INTERMEDIATE__15": {
+            "type": "Constant",
+            "label": "__INTERMEDIATE__15",
+            "constant": "00000000000000000000000000000000"
+        }
+    },
+    "connectors": [
+        {
+            "to": {
+                "id": "_T",
+                "port": "in1"
+            },
+            "from": {
+                "id": "io_op",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_T",
+                "port": "in2"
+            },
+            "from": {
+                "id": "__INTERMEDIATE__2",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_T_1",
+                "port": "in1"
+            },
+            "from": {
+                "id": "io_a",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_T_1",
+                "port": "in2"
+            },
+            "from": {
+                "id": "io_b",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_T_2",
+                "port": "in"
+            },
+            "from": {
+                "id": "_T_1",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_T_3",
+                "port": "in1"
+            },
+            "from": {
+                "id": "io_op",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_T_3",
+                "port": "in2"
+            },
+            "from": {
+                "id": "__INTERMEDIATE__7",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_T_4",
+                "port": "in1"
+            },
+            "from": {
+                "id": "io_a",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_T_4",
+                "port": "in2"
+            },
+            "from": {
+                "id": "io_b",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_T_5",
+                "port": "in"
+            },
+            "from": {
+                "id": "_T_4",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_T_6",
+                "port": "in1"
+            },
+            "from": {
+                "id": "io_op",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_T_6",
+                "port": "in2"
+            },
+            "from": {
+                "id": "__INTERMEDIATE__c",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_T_7",
+                "port": "in1"
+            },
+            "from": {
+                "id": "io_a",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_T_7",
+                "port": "in2"
+            },
+            "from": {
+                "id": "io_b",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_T_8",
+                "port": "in1"
+            },
+            "from": {
+                "id": "io_op",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_T_8",
+                "port": "in2"
+            },
+            "from": {
+                "id": "__INTERMEDIATE__10",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_T_9",
+                "port": "in1"
+            },
+            "from": {
+                "id": "io_a",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_T_9",
+                "port": "in2"
+            },
+            "from": {
+                "id": "io_b",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_GEN_0",
+                "port": "in0"
+            },
+            "from": {
+                "id": "__INTERMEDIATE__15",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_GEN_0",
+                "port": "in1"
+            },
+            "from": {
+                "id": "_T_9",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_GEN_0",
+                "port": "sel"
+            },
+            "from": {
+                "id": "_T_8",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_GEN_1",
+                "port": "in0"
+            },
+            "from": {
+                "id": "_GEN_0",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_GEN_1",
+                "port": "in1"
+            },
+            "from": {
+                "id": "_T_7",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_GEN_1",
+                "port": "sel"
+            },
+            "from": {
+                "id": "_T_6",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_GEN_2",
+                "port": "in0"
+            },
+            "from": {
+                "id": "_GEN_1",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_GEN_2",
+                "port": "in1"
+            },
+            "from": {
+                "id": "_T_5",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_GEN_2",
+                "port": "sel"
+            },
+            "from": {
+                "id": "_T_3",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_GEN_3",
+                "port": "in0"
+            },
+            "from": {
+                "id": "_GEN_2",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_GEN_3",
+                "port": "in1"
+            },
+            "from": {
+                "id": "_T_2",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_GEN_3",
+                "port": "sel"
+            },
+            "from": {
+                "id": "_T",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "io_result",
+                "port": "in"
+            },
+            "from": {
+                "id": "_GEN_3",
+                "port": "out"
+            }
+        }
+    ],
+    "subcircuits": {}
+}

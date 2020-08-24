@@ -1,0 +1,33 @@
+{
+    "devices": {
+        "clock": {
+            "type": "Clock",
+            "label": "clock"
+        },
+        "reset": {
+            "type": "Button",
+            "label": "reset"
+        },
+        "io_in": {
+            "type": "Button",
+            "label": "io_in"
+        },
+        "io_out": {
+            "type": "Lamp",
+            "label": "io_out"
+        }
+    },
+    "connectors": [
+        {
+            "to": {
+                "id": "io_out",
+                "port": "in"
+            },
+            "from": {
+                "id": "io_in",
+                "port": "out"
+            }
+        }
+    ],
+    "subcircuits": {}
+}

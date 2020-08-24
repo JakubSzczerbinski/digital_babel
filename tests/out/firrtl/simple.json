@@ -1,0 +1,25 @@
+{
+    "devices": {
+        "o": {
+            "type": "Lamp",
+            "label": "o"
+        },
+        "i": {
+            "type": "Button",
+            "label": "i"
+        }
+    },
+    "connectors": [
+        {
+            "to": {
+                "id": "o",
+                "port": "in"
+            },
+            "from": {
+                "id": "i",
+                "port": "out"
+            }
+        }
+    ],
+    "subcircuits": {}
+}

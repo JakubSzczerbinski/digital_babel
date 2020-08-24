@@ -1,0 +1,336 @@
+{
+    "devices": {
+        "_GEN_2": {
+            "type": "Mux",
+            "label": "_GEN_2",
+            "bits": {
+                "in": 8,
+                "sel": 1
+            }
+        },
+        "__INTERMEDIATE__8": {
+            "type": "Constant",
+            "label": "__INTERMEDIATE__8",
+            "constant": "10"
+        },
+        "_T": {
+            "type": "Eq",
+            "label": "_T",
+            "bits": {
+                "in1": 2,
+                "in2": 2
+            },
+            "signed": {
+                "in1": false,
+                "in2": false
+            }
+        },
+        "_T_3": {
+            "type": "BusSlice",
+            "label": "_T_3",
+            "slice": {
+                "first": 8,
+                "count": 8,
+                "total": 32
+            }
+        },
+        "io_sel_byte": {
+            "type": "NumDisplay",
+            "label": "io_sel_byte",
+            "bits": 8,
+            "numbase": "hex"
+        },
+        "io_bytes": {
+            "type": "NumEntry",
+            "label": "io_bytes",
+            "bits": 32,
+            "numbase": "hex"
+        },
+        "_T_4": {
+            "type": "Eq",
+            "label": "_T_4",
+            "bits": {
+                "in1": 2,
+                "in2": 2
+            },
+            "signed": {
+                "in1": false,
+                "in2": false
+            }
+        },
+        "__INTERMEDIATE__5": {
+            "type": "Constant",
+            "label": "__INTERMEDIATE__5",
+            "constant": "1"
+        },
+        "_T_6": {
+            "type": "BusSlice",
+            "label": "_T_6",
+            "slice": {
+                "first": 24,
+                "count": 8,
+                "total": 32
+            }
+        },
+        "io_sel": {
+            "type": "NumEntry",
+            "label": "io_sel",
+            "bits": 2,
+            "numbase": "hex"
+        },
+        "_T_2": {
+            "type": "Eq",
+            "label": "_T_2",
+            "bits": {
+                "in1": 2,
+                "in2": 1
+            },
+            "signed": {
+                "in1": false,
+                "in2": false
+            }
+        },
+        "__INTERMEDIATE__2": {
+            "type": "Constant",
+            "label": "__INTERMEDIATE__2",
+            "constant": "00"
+        },
+        "_T_5": {
+            "type": "BusSlice",
+            "label": "_T_5",
+            "slice": {
+                "first": 16,
+                "count": 8,
+                "total": 32
+            }
+        },
+        "_GEN_1": {
+            "type": "Mux",
+            "label": "_GEN_1",
+            "bits": {
+                "in": 8,
+                "sel": 1
+            }
+        },
+        "_T_1": {
+            "type": "BusSlice",
+            "label": "_T_1",
+            "slice": {
+                "first": 0,
+                "count": 8,
+                "total": 32
+            }
+        },
+        "_GEN_0": {
+            "type": "Mux",
+            "label": "_GEN_0",
+            "bits": {
+                "in": 8,
+                "sel": 1
+            }
+        }
+    },
+    "connectors": [
+        {
+            "to": {
+                "id": "_T",
+                "port": "in1"
+            },
+            "from": {
+                "id": "io_sel",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_T",
+                "port": "in2"
+            },
+            "from": {
+                "id": "__INTERMEDIATE__2",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_T_1",
+                "port": "in"
+            },
+            "from": {
+                "id": "io_bytes",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_T_2",
+                "port": "in1"
+            },
+            "from": {
+                "id": "io_sel",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_T_2",
+                "port": "in2"
+            },
+            "from": {
+                "id": "__INTERMEDIATE__5",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_T_3",
+                "port": "in"
+            },
+            "from": {
+                "id": "io_bytes",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_T_4",
+                "port": "in1"
+            },
+            "from": {
+                "id": "io_sel",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_T_4",
+                "port": "in2"
+            },
+            "from": {
+                "id": "__INTERMEDIATE__8",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_T_5",
+                "port": "in"
+            },
+            "from": {
+                "id": "io_bytes",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_T_6",
+                "port": "in"
+            },
+            "from": {
+                "id": "io_bytes",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_GEN_0",
+                "port": "in0"
+            },
+            "from": {
+                "id": "_T_6",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_GEN_0",
+                "port": "in1"
+            },
+            "from": {
+                "id": "_T_5",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_GEN_0",
+                "port": "sel"
+            },
+            "from": {
+                "id": "_T_4",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_GEN_1",
+                "port": "in0"
+            },
+            "from": {
+                "id": "_GEN_0",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_GEN_1",
+                "port": "in1"
+            },
+            "from": {
+                "id": "_T_3",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_GEN_1",
+                "port": "sel"
+            },
+            "from": {
+                "id": "_T_2",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_GEN_2",
+                "port": "in0"
+            },
+            "from": {
+                "id": "_GEN_1",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_GEN_2",
+                "port": "in1"
+            },
+            "from": {
+                "id": "_T_1",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_GEN_2",
+                "port": "sel"
+            },
+            "from": {
+                "id": "_T",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "io_sel_byte",
+                "port": "in"
+            },
+            "from": {
+                "id": "_GEN_2",
+                "port": "out"
+            }
+        }
+    ],
+    "subcircuits": {}
+}

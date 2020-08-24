@@ -1,0 +1,41 @@
+{
+  "name": "digital_babel",
+  "version": "1.0.4",
+  "description": "Convert HDLs to digitaljs format",
+  "author": "Jakub Szczerbiński",
+  "license": "MIT",
+  "scripts": {
+    "build_schema": "(echo 'export default' && ./node_modules/ts-json-schema-generator/bin/ts-json-schema-generator --path 'src/digitaljs/index.ts' --type Digitaljs) > src/digitaljs/schema.ts",
+    "build": "yarn run build_schema && tsc",
+    "build_third_party": "make -C third_party clean && make -C third_party binaries containers",
+    "test": "ts-node node_modules/jasmine/bin/jasmine --config=jasmine.json",
+    "coverage": "nyc -r text -e .ts -x \"tests/*.test.ts\" npm run test",
+    "prepublish": "yarn test && yarn run build && yarn run build_third_party"
+  },
+  "files": [
+    "build/**/*.js",
+    "src/**/*.ts",
+    "third_party/bin/*"
+  ],
+  "main": "./build/index.js",
+  "dependencies": {
+    "@types/ajv": "^1.0.0",
+    "ajv": "^6.12.3",
+    "child-process-promise": "^2.2.1",
+    "yosys2digitaljs": "0.2.3"
+  },
+  "devDependencies": {
+    "@types/jasmine": "^3.5.11",
+    "@types/json-diff": "^0.5.0",
+    "@types/node": "^13.11.1",
+    "jasmine": "^3.5.0",
+    "json-diff": "^0.5.4",
+    "nodemon": "^2.0.3",
+    "nyc": "^15.1.0",
+    "ts-json-schema-generator": "^0.70.2",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.6",
+    "typescript-is": "^0.15.0",
+    "typescript-json-schema": "^0.42.0"
+  }
+}

@@ -1,0 +1,5 @@
+FROM openjdk:8
+
+ARG F2D_PATH
+
+ADD $F2D_PATH /opt/firrtl2digitaljs.jar

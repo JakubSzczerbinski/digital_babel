@@ -1,0 +1,32 @@
+{
+    "devices": {
+        "dev0": {
+            "type": "Button",
+            "net": "i",
+            "order": 0,
+            "bits": 1,
+            "label": "i"
+        },
+        "dev1": {
+            "type": "Lamp",
+            "net": "o",
+            "order": 1,
+            "bits": 1,
+            "label": "o"
+        }
+    },
+    "connectors": [
+        {
+            "to": {
+                "id": "dev1",
+                "port": "in"
+            },
+            "from": {
+                "id": "dev0",
+                "port": "out"
+            },
+            "name": "i"
+        }
+    ],
+    "subcircuits": {}
+}

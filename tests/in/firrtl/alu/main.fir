@@ -1,0 +1,33 @@
+;buildInfoPackage: chisel3, version: 3.2.2, scalaVersion: 2.11.12, sbtVersion: 1.3.2
+circuit Main : 
+  module Main : 
+    output io : {flip op : UInt<2>, flip a : UInt<16>, flip b : UInt<16>, result : UInt<32>}
+    
+    node _T = eq(io.op, UInt<2>("h00")) @[Main.scala 20:17]
+    when _T : @[Main.scala 20:29]
+      node _T_1 = sub(io.a, io.b) @[Main.scala 21:27]
+      node _T_2 = tail(_T_1, 1) @[Main.scala 21:27]
+      io.result <= _T_2 @[Main.scala 21:19]
+      skip @[Main.scala 20:29]
+    else : @[Main.scala 22:36]
+      node _T_3 = eq(io.op, UInt<2>("h01")) @[Main.scala 22:24]
+      when _T_3 : @[Main.scala 22:36]
+        node _T_4 = add(io.a, io.b) @[Main.scala 23:27]
+        node _T_5 = tail(_T_4, 1) @[Main.scala 23:27]
+        io.result <= _T_5 @[Main.scala 23:19]
+        skip @[Main.scala 22:36]
+      else : @[Main.scala 24:36]
+        node _T_6 = eq(io.op, UInt<2>("h02")) @[Main.scala 24:24]
+        when _T_6 : @[Main.scala 24:36]
+          node _T_7 = mul(io.a, io.b) @[Main.scala 25:27]
+          io.result <= _T_7 @[Main.scala 25:19]
+          skip @[Main.scala 24:36]
+        else : @[Main.scala 26:36]
+          node _T_8 = eq(io.op, UInt<2>("h03")) @[Main.scala 26:24]
+          when _T_8 : @[Main.scala 26:36]
+            node _T_9 = div(io.a, io.b) @[Main.scala 27:27]
+            io.result <= _T_9 @[Main.scala 27:19]
+            skip @[Main.scala 26:36]
+          else : @[Main.scala 28:18]
+            io.result <= UInt<32>("h00") @[Main.scala 29:19]
+            skip @[Main.scala 28:18]

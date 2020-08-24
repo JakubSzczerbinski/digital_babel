@@ -1,0 +1,222 @@
+{
+    "devices": {
+        "_T": {
+            "type": "Xor",
+            "label": "_T",
+            "bits": 1
+        },
+        "_T_3": {
+            "type": "And",
+            "label": "_T_3",
+            "bits": 1
+        },
+        "io_Cout": {
+            "type": "Lamp",
+            "label": "io_Cout"
+        },
+        "io_Sum": {
+            "type": "Lamp",
+            "label": "io_Sum"
+        },
+        "_T_4": {
+            "type": "Or",
+            "label": "_T_4",
+            "bits": 1
+        },
+        "io_Cin": {
+            "type": "Button",
+            "label": "io_Cin"
+        },
+        "_T_6": {
+            "type": "Or",
+            "label": "_T_6",
+            "bits": 1
+        },
+        "_T_2": {
+            "type": "And",
+            "label": "_T_2",
+            "bits": 1
+        },
+        "_T_5": {
+            "type": "And",
+            "label": "_T_5",
+            "bits": 1
+        },
+        "io_B": {
+            "type": "Button",
+            "label": "io_B"
+        },
+        "_T_1": {
+            "type": "Xor",
+            "label": "_T_1",
+            "bits": 1
+        },
+        "io_A": {
+            "type": "Button",
+            "label": "io_A"
+        }
+    },
+    "connectors": [
+        {
+            "to": {
+                "id": "_T",
+                "port": "in1"
+            },
+            "from": {
+                "id": "io_A",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_T",
+                "port": "in2"
+            },
+            "from": {
+                "id": "io_B",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_T_1",
+                "port": "in1"
+            },
+            "from": {
+                "id": "_T",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_T_1",
+                "port": "in2"
+            },
+            "from": {
+                "id": "io_Cin",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_T_2",
+                "port": "in1"
+            },
+            "from": {
+                "id": "io_A",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_T_2",
+                "port": "in2"
+            },
+            "from": {
+                "id": "io_B",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_T_3",
+                "port": "in1"
+            },
+            "from": {
+                "id": "io_A",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_T_3",
+                "port": "in2"
+            },
+            "from": {
+                "id": "io_Cin",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_T_4",
+                "port": "in1"
+            },
+            "from": {
+                "id": "_T_2",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_T_4",
+                "port": "in2"
+            },
+            "from": {
+                "id": "_T_3",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_T_5",
+                "port": "in1"
+            },
+            "from": {
+                "id": "io_B",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_T_5",
+                "port": "in2"
+            },
+            "from": {
+                "id": "io_Cin",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_T_6",
+                "port": "in1"
+            },
+            "from": {
+                "id": "_T_4",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_T_6",
+                "port": "in2"
+            },
+            "from": {
+                "id": "_T_5",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "io_Sum",
+                "port": "in"
+            },
+            "from": {
+                "id": "_T_1",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "io_Cout",
+                "port": "in"
+            },
+            "from": {
+                "id": "_T_6",
+                "port": "out"
+            }
+        }
+    ],
+    "subcircuits": {}
+}

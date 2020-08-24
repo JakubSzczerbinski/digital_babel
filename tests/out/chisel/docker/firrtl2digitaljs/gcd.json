@@ -1,0 +1,444 @@
+{
+    "devices": {
+        "_GEN_2": {
+            "type": "Mux",
+            "label": "_GEN_2",
+            "bits": {
+                "in": 32,
+                "sel": 1
+            }
+        },
+        "x": {
+            "type": "Dff",
+            "label": "x",
+            "bits": 32,
+            "polarity": {
+                "clock": false
+            },
+            "initial": ""
+        },
+        "_T": {
+            "type": "Gt",
+            "label": "_T",
+            "bits": {
+                "in1": 32,
+                "in2": 32
+            },
+            "signed": {
+                "in1": false,
+                "in2": false
+            }
+        },
+        "_T_3": {
+            "type": "Subtraction",
+            "label": "_T_3",
+            "bits": {
+                "in1": 32,
+                "in2": 32,
+                "out": 33
+            },
+            "signed": {
+                "in1": false,
+                "in2": false
+            }
+        },
+        "y": {
+            "type": "Dff",
+            "label": "y",
+            "bits": 32,
+            "polarity": {
+                "clock": false
+            },
+            "initial": ""
+        },
+        "io_ready": {
+            "type": "Lamp",
+            "label": "io_ready"
+        },
+        "_T_4": {
+            "type": "BusSlice",
+            "label": "_T_4",
+            "slice": {
+                "first": 0,
+                "count": 32,
+                "total": 33
+            }
+        },
+        "_GEN_3": {
+            "type": "Mux",
+            "label": "_GEN_3",
+            "bits": {
+                "in": 32,
+                "sel": 1
+            }
+        },
+        "_T_2": {
+            "type": "BusSlice",
+            "label": "_T_2",
+            "slice": {
+                "first": 0,
+                "count": 32,
+                "total": 33
+            }
+        },
+        "__INTERMEDIATE__18": {
+            "type": "Constant",
+            "label": "__INTERMEDIATE__18",
+            "constant": "0"
+        },
+        "clock": {
+            "type": "Clock",
+            "label": "clock"
+        },
+        "io_load": {
+            "type": "Button",
+            "label": "io_load"
+        },
+        "_T_5": {
+            "type": "Eq",
+            "label": "_T_5",
+            "bits": {
+                "in1": 32,
+                "in2": 1
+            },
+            "signed": {
+                "in1": false,
+                "in2": false
+            }
+        },
+        "reset": {
+            "type": "Button",
+            "label": "reset"
+        },
+        "_GEN_1": {
+            "type": "Mux",
+            "label": "_GEN_1",
+            "bits": {
+                "in": 32,
+                "sel": 1
+            }
+        },
+        "io_result": {
+            "type": "NumDisplay",
+            "label": "io_result",
+            "bits": 32,
+            "numbase": "hex"
+        },
+        "io_b": {
+            "type": "NumEntry",
+            "label": "io_b",
+            "bits": 32,
+            "numbase": "hex"
+        },
+        "_T_1": {
+            "type": "Subtraction",
+            "label": "_T_1",
+            "bits": {
+                "in1": 32,
+                "in2": 32,
+                "out": 33
+            },
+            "signed": {
+                "in1": false,
+                "in2": false
+            }
+        },
+        "_GEN_0": {
+            "type": "Mux",
+            "label": "_GEN_0",
+            "bits": {
+                "in": 32,
+                "sel": 1
+            }
+        },
+        "io_a": {
+            "type": "NumEntry",
+            "label": "io_a",
+            "bits": 32,
+            "numbase": "hex"
+        }
+    },
+    "connectors": [
+        {
+            "to": {
+                "id": "x",
+                "port": "clk"
+            },
+            "from": {
+                "id": "clock",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "y",
+                "port": "clk"
+            },
+            "from": {
+                "id": "clock",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_T",
+                "port": "in1"
+            },
+            "from": {
+                "id": "x",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_T",
+                "port": "in2"
+            },
+            "from": {
+                "id": "y",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_T_1",
+                "port": "in1"
+            },
+            "from": {
+                "id": "x",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_T_1",
+                "port": "in2"
+            },
+            "from": {
+                "id": "y",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_T_2",
+                "port": "in"
+            },
+            "from": {
+                "id": "_T_1",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_T_3",
+                "port": "in1"
+            },
+            "from": {
+                "id": "y",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_T_3",
+                "port": "in2"
+            },
+            "from": {
+                "id": "x",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_T_4",
+                "port": "in"
+            },
+            "from": {
+                "id": "_T_3",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_GEN_0",
+                "port": "in0"
+            },
+            "from": {
+                "id": "x",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_GEN_0",
+                "port": "in1"
+            },
+            "from": {
+                "id": "_T_2",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_GEN_0",
+                "port": "sel"
+            },
+            "from": {
+                "id": "_T",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_GEN_1",
+                "port": "in0"
+            },
+            "from": {
+                "id": "_T_4",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_GEN_1",
+                "port": "in1"
+            },
+            "from": {
+                "id": "y",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_GEN_1",
+                "port": "sel"
+            },
+            "from": {
+                "id": "_T",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_GEN_2",
+                "port": "in0"
+            },
+            "from": {
+                "id": "_GEN_0",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_GEN_2",
+                "port": "in1"
+            },
+            "from": {
+                "id": "io_a",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_GEN_2",
+                "port": "sel"
+            },
+            "from": {
+                "id": "io_load",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_GEN_3",
+                "port": "in0"
+            },
+            "from": {
+                "id": "_GEN_1",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_GEN_3",
+                "port": "in1"
+            },
+            "from": {
+                "id": "io_b",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_GEN_3",
+                "port": "sel"
+            },
+            "from": {
+                "id": "io_load",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_T_5",
+                "port": "in1"
+            },
+            "from": {
+                "id": "y",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "_T_5",
+                "port": "in2"
+            },
+            "from": {
+                "id": "__INTERMEDIATE__18",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "io_ready",
+                "port": "in"
+            },
+            "from": {
+                "id": "_T_5",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "io_result",
+                "port": "in"
+            },
+            "from": {
+                "id": "x",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "x",
+                "port": "in"
+            },
+            "from": {
+                "id": "_GEN_2",
+                "port": "out"
+            }
+        },
+        {
+            "to": {
+                "id": "y",
+                "port": "in"
+            },
+            "from": {
+                "id": "_GEN_3",
+                "port": "out"
+            }
+        }
+    ],
+    "subcircuits": {}
+}
